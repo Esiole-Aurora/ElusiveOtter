@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deck_Randomiser_3", "Deck_Randomiser_3\Deck_Randomiser_3.csproj", "{AB1F16CF-3BBB-480A-96FC-4C9CB9403C27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElusiveOtter", "ElusiveOtter\ElusiveOtter.csproj", "{AB1F16CF-3BBB-480A-96FC-4C9CB9403C27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

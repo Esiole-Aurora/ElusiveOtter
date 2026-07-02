@@ -6,6 +6,7 @@
         <Nullable>enable</Nullable>
         <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Deck_Randomiser_3</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
