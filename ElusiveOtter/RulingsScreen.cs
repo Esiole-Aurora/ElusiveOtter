@@ -7,6 +7,8 @@ public partial class RulingsScreen : UserControl
 {
     private Image _image = null;
     private PictureBox _cardImage = null;
+    private JsonNode _cardData;
+    private Form _hoverPopup;
     
     public RulingsScreen()
     {
@@ -29,6 +31,17 @@ public partial class RulingsScreen : UserControl
         {
             Rulings.Text = e.Message + "\nHTTP Error";
         }
+    }
+    
+    private JsonNode FetchCardData()
+    {
+        string cardName = CardName.Text;
+        using var client = new WebClient();
+        client.Headers.Add(HttpRequestHeader.Accept, "*/*");
+        client.Headers.Add(HttpRequestHeader.UserAgent, "Deck_Randomiser_2");
+        var uri = $"https://api.scryfall.com/cards/{cardName}";
+        var jsonString = client.DownloadString(uri);
+        return JsonNode.Parse(jsonString);
     }
     
     private void ParseCardRulings()
@@ -77,7 +90,61 @@ public partial class RulingsScreen : UserControl
         pictureBox.Image = _image;
         pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
         pictureBox.Size = new Size(250, 348);
+        
+        pictureBox.MouseEnter += (s, e) =>
+        {
+            if (_cardData != null)
+            {
+                var screenLoc = pictureBox.PointToScreen(new Point(pictureBox.Width, 0));
+                ShowCardPopup(_cardData, screenLoc);
+            }
+        };
+
+        pictureBox.MouseLeave += (s, e) => HideCardPopup();
+        
         return pictureBox;
+    }
+    
+    private void ShowCardPopup(JsonNode card, Point screenLocation)
+    {
+        _hoverPopup?.Close();
+
+        _hoverPopup = new Form
+        {
+            FormBorderStyle = FormBorderStyle.None,
+            StartPosition = FormStartPosition.Manual,
+            Location = screenLocation,
+            Size = new Size(250, 150),
+            BackColor = Color.LightYellow,
+            TopMost = true,
+            ShowInTaskbar = false
+        };
+
+        var nameLabel = new Label
+        {
+            Text = card?["name"]?.ToString(),
+            Font = new Font(Font, FontStyle.Bold),
+            AutoSize = false,
+            Dock = DockStyle.Top,
+            Height = 20
+        };
+
+        var oracleLabel = new Label
+        {
+            Text = card?["oracle_text"]?.ToString(),
+            AutoSize = false,
+            Dock = DockStyle.Fill
+        };
+
+        _hoverPopup.Controls.Add(oracleLabel);
+        _hoverPopup.Controls.Add(nameLabel);
+        _hoverPopup.Show();
+    }
+
+    private void HideCardPopup()
+    {
+        _hoverPopup?.Close();
+        _hoverPopup = null;
     }
 
     private void SearchButton_Click(object sender, EventArgs e)
@@ -89,5 +156,7 @@ public partial class RulingsScreen : UserControl
         _cardImage = GetCardImage();
         Controls.Add(_cardImage);
         ParseCardRulings();
+        _cardData = FetchCardData();
     }
+    
 }
