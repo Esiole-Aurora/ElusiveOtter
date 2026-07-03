@@ -5,4 +5,8 @@
             <SubType>Form</SubType>
         </Compile>
     </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    </PropertyGroup>
 </Project>
