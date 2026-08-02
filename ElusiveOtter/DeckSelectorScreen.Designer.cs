@@ -43,7 +43,9 @@ partial class DeckSelectorScreen
         // 
         // NoOfDecks
         // 
-        NoOfDecks.Location = new System.Drawing.Point(40, 30);
+        NoOfDecks.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        NoOfDecks.ForeColor = System.Drawing.Color.White;
+        NoOfDecks.Location = new System.Drawing.Point(27, 29);
         NoOfDecks.Name = "NoOfDecks";
         NoOfDecks.Size = new System.Drawing.Size(160, 23);
         NoOfDecks.TabIndex = 0;
@@ -51,34 +53,57 @@ partial class DeckSelectorScreen
         // 
         // NoSelectBox
         // 
-        NoSelectBox.Location = new System.Drawing.Point(167, 26);
+        NoSelectBox.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        NoSelectBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        NoSelectBox.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        NoSelectBox.Location = new System.Drawing.Point(167, 29);
         NoSelectBox.Name = "NoSelectBox";
-        NoSelectBox.Size = new System.Drawing.Size(100, 27);
+        NoSelectBox.Size = new System.Drawing.Size(100, 20);
         NoSelectBox.TabIndex = 1;
         // 
         // SelectButton
         // 
+        SelectButton.BackColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        SelectButton.Cursor = System.Windows.Forms.Cursors.Hand;
+        SelectButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        SelectButton.FlatAppearance.BorderSize = 0;
+        SelectButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)((byte)70)), ((int)((byte)88)), ((int)((byte)210)));
+        SelectButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)((byte)107)), ((int)((byte)120)), ((int)((byte)248)));
+        SelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+        SelectButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        SelectButton.ForeColor = System.Drawing.Color.White;
         SelectButton.Location = new System.Drawing.Point(273, 22);
         SelectButton.Name = "SelectButton";
         SelectButton.Size = new System.Drawing.Size(79, 31);
         SelectButton.TabIndex = 2;
         SelectButton.Text = "SELECT";
-        SelectButton.UseVisualStyleBackColor = true;
+        SelectButton.UseVisualStyleBackColor = false;
         SelectButton.Click += SelectButton_Click;
         // 
         // RerollButton
         // 
+        RerollButton.BackColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        RerollButton.Cursor = System.Windows.Forms.Cursors.Hand;
+        RerollButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        RerollButton.FlatAppearance.BorderSize = 0;
+        RerollButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)((byte)70)), ((int)((byte)88)), ((int)((byte)210)));
+        RerollButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)((byte)107)), ((int)((byte)120)), ((int)((byte)248)));
+        RerollButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+        RerollButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        RerollButton.ForeColor = System.Drawing.Color.White;
         RerollButton.Location = new System.Drawing.Point(358, 22);
         RerollButton.Name = "RerollButton";
         RerollButton.Size = new System.Drawing.Size(79, 31);
         RerollButton.TabIndex = 3;
         RerollButton.Text = "REROLL";
-        RerollButton.UseVisualStyleBackColor = true;
+        RerollButton.UseVisualStyleBackColor = false;
         RerollButton.Click += RerollButton_Click;
         // 
         // label1
         // 
-        label1.Location = new System.Drawing.Point(444, 423);
+        label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label1.ForeColor = System.Drawing.Color.White;
+        label1.Location = new System.Drawing.Point(431, 464);
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(100, 23);
         label1.TabIndex = 4;
@@ -86,7 +111,9 @@ partial class DeckSelectorScreen
         // 
         // label2
         // 
-        label2.Location = new System.Drawing.Point(444, 471);
+        label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label2.ForeColor = System.Drawing.Color.White;
+        label2.Location = new System.Drawing.Point(431, 502);
         label2.Name = "label2";
         label2.Size = new System.Drawing.Size(100, 23);
         label2.TabIndex = 5;
@@ -94,18 +121,24 @@ partial class DeckSelectorScreen
         // 
         // MaxBracket
         // 
-        MaxBracket.Location = new System.Drawing.Point(537, 467);
+        MaxBracket.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        MaxBracket.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        MaxBracket.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        MaxBracket.Location = new System.Drawing.Point(537, 502);
         MaxBracket.Name = "MaxBracket";
-        MaxBracket.Size = new System.Drawing.Size(70, 27);
+        MaxBracket.Size = new System.Drawing.Size(70, 20);
         MaxBracket.TabIndex = 7;
         MaxBracket.Text = "5";
         MaxBracket.TextChanged += MaxBracket_TextChanged;
         // 
         // MinBracket
         // 
-        MinBracket.Location = new System.Drawing.Point(537, 419);
+        MinBracket.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        MinBracket.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        MinBracket.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        MinBracket.Location = new System.Drawing.Point(537, 464);
         MinBracket.Name = "MinBracket";
-        MinBracket.Size = new System.Drawing.Size(70, 27);
+        MinBracket.Size = new System.Drawing.Size(70, 20);
         MinBracket.TabIndex = 8;
         MinBracket.Text = "1";
         MinBracket.TextChanged += MinBracket_TextChanged;

@@ -115,7 +115,7 @@ public partial class RulingsScreen : UserControl
             StartPosition = FormStartPosition.Manual,
             Location = screenLocation,
             Size = new Size(250, 150),
-            BackColor = Color.LightYellow,
+            BackColor = Color.DarkSlateGray,
             TopMost = true,
             ShowInTaskbar = false
         };
@@ -124,6 +124,7 @@ public partial class RulingsScreen : UserControl
         {
             Text = card?["name"]?.ToString(),
             Font = new Font(Font, FontStyle.Bold),
+            ForeColor = Color.FromArgb(212,220,220),
             AutoSize = false,
             Dock = DockStyle.Top,
             Height = 20
@@ -133,6 +134,7 @@ public partial class RulingsScreen : UserControl
         {
             Text = card?["oracle_text"]?.ToString(),
             AutoSize = false,
+            ForeColor = Color.FromArgb(212,220,220),
             Dock = DockStyle.Fill
         };
 

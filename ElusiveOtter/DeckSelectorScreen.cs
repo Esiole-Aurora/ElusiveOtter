@@ -145,8 +145,8 @@ public partial class DeckSelectorScreen : UserControl
             _decks.Remove(nextDeck);
             var label = new Label();
             label.Text = nextDeck;
-            label.Font = new Font("Courier New", 10f);
-            label.ForeColor = SystemColors.ControlLightLight;
+            label.Font = new Font("Segoe UI", 10f, FontStyle.Bold);
+            label.ForeColor = Color.FromArgb(212,220,220);
             label.AutoSize = true;
             var checkBox = new CheckBox();
             checkBox.AutoSize = true;

@@ -139,6 +139,7 @@ partial class MainForm
         ClientSize = new System.Drawing.Size(782, 553);
         Controls.Add(ContentPanel);
         Controls.Add(NavPanel);
+        MaximizeBox = false;
         Text = "ElusiveOtter";
         NavPanel.ResumeLayout(false);
         ResumeLayout(false);

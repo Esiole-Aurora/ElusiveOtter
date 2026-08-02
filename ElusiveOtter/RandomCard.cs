@@ -157,13 +157,14 @@ public partial class RandomCard : UserControl
             AutoSize = true,
             AutoSizeMode = AutoSizeMode.GrowAndShrink,
             Padding = new Padding(8),
-            BackColor = Color.LightYellow
+            BackColor = Color.DarkSlateGray
         };
 
         var nameLabel = new Label
         {
             Text = nameText,
             Font = new Font(Font.FontFamily, 10, FontStyle.Bold),
+            ForeColor = Color.FromArgb(212,220,220),
             AutoSize = true,
             MaximumSize = new Size(maxWidth, 0),
             Margin = new Padding(0, 0, 0, 4)
@@ -177,7 +178,7 @@ public partial class RandomCard : UserControl
                 Text = manaCost,
                 AutoSize = true,
                 MaximumSize = new Size(maxWidth, 0),
-                ForeColor = Color.DarkSlateGray,
+                ForeColor = Color.FromArgb(212,220,220),
                 Margin = new Padding(0, 0, 0, 6)
             };
             panel.Controls.Add(manaLabel);
@@ -187,6 +188,7 @@ public partial class RandomCard : UserControl
         {
             Text = oracleText,
             AutoSize = true,
+            ForeColor = Color.FromArgb(212,220,220),
             MaximumSize = new Size(maxWidth, 0),
             Margin = new Padding(0)
         };
@@ -199,7 +201,7 @@ public partial class RandomCard : UserControl
             Location = screenLocation,
             AutoSize = true,
             AutoSizeMode = AutoSizeMode.GrowAndShrink,
-            BackColor = Color.Ivory,
+            BackColor = Color.DarkSlateGray,
             TopMost = true,
             ShowInTaskbar = false
         };

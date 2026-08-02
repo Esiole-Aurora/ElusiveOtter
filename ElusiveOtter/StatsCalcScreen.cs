@@ -1,13 +1,22 @@
-﻿using System.Collections;
-using System.Numerics;
+﻿using System.Numerics;
 
 namespace Deck_Randomiser_3;
 
 public partial class StatsCalcScreen : UserControl
 {
+    private const int HandSize = 7;
+    private const int CopiesWanted = 3;
+    private const int DeckSize = 99;
+    private readonly List<string> _issues = [];
     
-    private readonly ArrayList _labels = new ArrayList();
-    
+    private static readonly Color[] ManaSwatch  =
+    [
+        Color.FromArgb(248, 231, 160),  // W
+        Color.FromArgb(106, 173, 223),  // U
+        Color.FromArgb(176, 122, 204),  // B
+        Color.FromArgb(232, 120,  88),  // R
+        Color.FromArgb( 88, 200, 122) // G
+    ];
     public StatsCalcScreen()
     {
         InitializeComponent();
@@ -15,28 +24,24 @@ public partial class StatsCalcScreen : UserControl
 
     private void CalculateButton_Click(object sender, EventArgs e)
     {
-        foreach (Label label in _labels)
+        _issues.Clear();
+        if (GreaterThanEqualTo(HandSize, DeckSize, int.Parse(CopiesInDeck.Text), CopiesWanted) <= 0.5)
         {
-            this.Controls.Remove(label);
+            _issues.Add("Odds of opening 3 or more lands <= 50%: Consider more lands for consistency");
         }
 
-        _labels.Clear();
-
-        if (!ValidateVals()) return;
-        
-        for (var i = int.Parse(HandSize.Text); i < int.Parse(HandSize.Text) + 4; i++)
+        IssuesBox.Text = "";
+        if (_issues.Count > 0)
         {
-            var label = new Label();
-            label.Text = "Probability after " + i.ToString() + " draws: " +
-                         (GreaterThanEqualTo(i,int.Parse(DeckSize.Text), 
-                             int.Parse(CopiesInDeck.Text), int.Parse(CopiesWanted.Text)).ToString("0.##"));
-            label.AutoSize = true;
-            label.Location = new Point(30, ((i - int.Parse(HandSize.Text)) * 20) + 200);
-            _labels.Add(label);
-            this.Controls.Add(label);
-
+            IssuesBox.Text = string.Join("\n", _issues);
+        }
+        else
+        {
+            IssuesBox.Text = "No issues found.";
         }
     }
+    
+    //ToDo Add input validation
     private static bool ValidateVals()
     {
         return true;
@@ -74,9 +79,9 @@ public partial class StatsCalcScreen : UserControl
     
     private static double CombinationsWithoutRepetitions(int n, int r)
     {
-        BigInteger factN = Fact(n);
-        BigInteger factR = Fact(r);
-        BigInteger factNr = Fact(n-r); 
+        var factN = Fact(n);
+        var factR = Fact(r);
+        var factNr = Fact(n-r); 
         var val = (double) BigInteger.Divide(factN, BigInteger.Multiply(factR, factNr));
         return val;
     }

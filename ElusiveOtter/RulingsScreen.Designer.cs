@@ -38,28 +38,47 @@ partial class RulingsScreen
         // 
         // CardName
         // 
-        CardName.Location = new System.Drawing.Point(40, 65);
+        CardName.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        CardName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        CardName.Dock = System.Windows.Forms.DockStyle.Left;
+        CardName.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        CardName.Location = new System.Drawing.Point(0, 0);
         CardName.Name = "CardName";
         CardName.PlaceholderText = "SET/ID";
-        CardName.Size = new System.Drawing.Size(300, 27);
+        CardName.Size = new System.Drawing.Size(455, 27);
         CardName.TabIndex = 0;
         // 
         // Rulings
         // 
-        Rulings.Location = new System.Drawing.Point(40, 98);
+        Rulings.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        Rulings.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        Rulings.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        Rulings.Location = new System.Drawing.Point(0, 27);
         Rulings.Name = "Rulings";
-        Rulings.Size = new System.Drawing.Size(300, 407);
+        Rulings.ReadOnly = true;
+        Rulings.Size = new System.Drawing.Size(333, 526);
         Rulings.TabIndex = 1;
+        Rulings.TabStop = false;
         Rulings.Text = "";
         // 
         // SearchButton
         // 
-        SearchButton.Location = new System.Drawing.Point(346, 65);
+        SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+        SearchButton.Dock = System.Windows.Forms.DockStyle.Top;
+        SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        SearchButton.FlatAppearance.BorderSize = 0;
+        SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)((byte)70)), ((int)((byte)88)), ((int)((byte)210)));
+        SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)((byte)107)), ((int)((byte)120)), ((int)((byte)248)));
+        SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+        SearchButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        SearchButton.ForeColor = System.Drawing.Color.White;
+        SearchButton.Location = new System.Drawing.Point(455, 0);
         SearchButton.Name = "SearchButton";
-        SearchButton.Size = new System.Drawing.Size(112, 27);
+        SearchButton.Size = new System.Drawing.Size(182, 27);
         SearchButton.TabIndex = 2;
         SearchButton.Text = "SEARCH";
-        SearchButton.UseVisualStyleBackColor = true;
+        SearchButton.UseVisualStyleBackColor = false;
         SearchButton.Click += SearchButton_Click;
         // 
         // RulingsScreen
@@ -70,7 +89,7 @@ partial class RulingsScreen
         Controls.Add(SearchButton);
         Controls.Add(Rulings);
         Controls.Add(CardName);
-        Size = new System.Drawing.Size(637, 533);
+        Size = new System.Drawing.Size(637, 553);
         ResumeLayout(false);
         PerformLayout();
     }

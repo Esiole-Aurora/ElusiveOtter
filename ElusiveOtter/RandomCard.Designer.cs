@@ -38,30 +38,51 @@ partial class RandomCard
         // 
         // SearchCriteria
         // 
-        SearchCriteria.Location = new System.Drawing.Point(449, 157);
+        SearchCriteria.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        SearchCriteria.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        SearchCriteria.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        SearchCriteria.Location = new System.Drawing.Point(473, 0);
         SearchCriteria.Name = "SearchCriteria";
-        SearchCriteria.Size = new System.Drawing.Size(161, 243);
+        SearchCriteria.Size = new System.Drawing.Size(164, 383);
         SearchCriteria.TabIndex = 0;
         SearchCriteria.Text = "name:\"Elusive Otter\"";
         // 
         // GetCard
         // 
-        GetCard.Location = new System.Drawing.Point(449, 406);
+        GetCard.BackColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        GetCard.Cursor = System.Windows.Forms.Cursors.Hand;
+        GetCard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        GetCard.FlatAppearance.BorderSize = 0;
+        GetCard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)((byte)70)), ((int)((byte)88)), ((int)((byte)210)));
+        GetCard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)((byte)107)), ((int)((byte)120)), ((int)((byte)248)));
+        GetCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+        GetCard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        GetCard.ForeColor = System.Drawing.Color.White;
+        GetCard.Location = new System.Drawing.Point(473, 383);
         GetCard.Name = "GetCard";
-        GetCard.Size = new System.Drawing.Size(161, 59);
+        GetCard.Size = new System.Drawing.Size(164, 82);
         GetCard.TabIndex = 1;
         GetCard.Text = "GET A CARD";
-        GetCard.UseVisualStyleBackColor = true;
+        GetCard.UseVisualStyleBackColor = false;
         GetCard.Click += GetCard_Click;
         // 
         // GetCommander
         // 
-        GetCommander.Location = new System.Drawing.Point(449, 471);
+        GetCommander.BackColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        GetCommander.Cursor = System.Windows.Forms.Cursors.Hand;
+        GetCommander.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)((byte)91)), ((int)((byte)106)), ((int)((byte)240)));
+        GetCommander.FlatAppearance.BorderSize = 0;
+        GetCommander.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)((byte)70)), ((int)((byte)88)), ((int)((byte)210)));
+        GetCommander.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)((byte)107)), ((int)((byte)120)), ((int)((byte)248)));
+        GetCommander.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+        GetCommander.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        GetCommander.ForeColor = System.Drawing.Color.White;
+        GetCommander.Location = new System.Drawing.Point(473, 471);
         GetCommander.Name = "GetCommander";
-        GetCommander.Size = new System.Drawing.Size(161, 60);
+        GetCommander.Size = new System.Drawing.Size(164, 82);
         GetCommander.TabIndex = 2;
         GetCommander.Text = "GET A COMMANDER";
-        GetCommander.UseVisualStyleBackColor = true;
+        GetCommander.UseVisualStyleBackColor = false;
         GetCommander.Click += GetCommander_Click;
         // 
         // RandomCard
