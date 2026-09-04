@@ -24,12 +24,26 @@ public partial class MainForm : Form
         screen.Dock = DockStyle.Fill;
         ContentPanel.Controls.Add(screen);
 
-        if (screen is DeckSelectorScreen)
+        switch (screen)
         {
-            HighlightButton(DeckSelectorButton);
+            case DeckSelectorScreen:
+                HighlightButton(DeckSelectorButton);
+                break;
+            case StatsCalcScreen:
+                HighlightButton(StatsButton);
+                break;
+            case RandomCard:
+                HighlightButton(RandomCardButton);
+                break;
+            case ModifyDecksList:
+                HighlightButton(ModifyDecksButton);
+                break;
+            case RulingsScreen:
+                HighlightButton(RulingsButton);
+                break;
         }
+        
     }
-
     private void HighlightButton(Button button)
     {
         DeckSelectorButton.BackColor = Color.Transparent;

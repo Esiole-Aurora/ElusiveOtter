@@ -25,6 +25,9 @@
       <Compile Update="RulingsScreen.cs">
         <SubType>UserControl</SubType>
       </Compile>
+      <Compile Update="ManaBaseScreen.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
