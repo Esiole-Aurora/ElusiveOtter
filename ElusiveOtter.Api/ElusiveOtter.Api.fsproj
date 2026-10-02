@@ -2,12 +2,20 @@
 
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
+        <RootNamespace>ElusiveOtter.Api</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
         <Compile Include="WeatherForecast.fs"/>
         <Compile Include="Controllers/WeatherForecastController.fs"/>
-        <Compile Include="Program.fs"/>
+        <Compile Include="Controllers\CardsController.fs" />
+        <Compile Include="Controllers\DecksController.fs" />
+        <Compile Include="Data\AppDbContext.fs" />
+        <Compile Include="Dtos\CardDto.fs" />
+        <Compile Include="Dtos\DeckDto.fs" />
+        <Compile Include="Repositories\IRepository.fs" />
+        <Compile Include="Repositories\Repository.fs" />
+		<Compile Include="Program.fs"/>
     </ItemGroup>
 
 </Project>

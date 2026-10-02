@@ -35,5 +35,10 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="..\ElusiveOtter.Core\ElusiveOtter.Core.csproj"/>
+    </ItemGroup>
+
 
 </Project>

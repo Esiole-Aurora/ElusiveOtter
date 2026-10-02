@@ -22,39 +22,11 @@ public partial class StatsCalcScreen : UserControl
         InitializeComponent();
     }
 
-    private List<char> getColourID()
-    {
-        List<char> colours = [];
-        if (WhiteButton.Checked)
-        {
-            colours.Add('W');
-        }
-        if (BlueButton.Checked)
-        {
-            colours.Add('U');
-        }
-        if (BlackButton.Checked)
-        {
-            colours.Add('B');
-        }
-        if (RedButton.Checked)
-        {
-            colours.Add('R');
-        }
-        if (GreenButton.Checked)
-        {
-            colours.Add('G');
-        }
-        return colours;
-    }
+    
     
     private void CalculateButton_Click(object sender, EventArgs e)
     {
         _issues.Clear();
-
-        var colourID = getColourID();
-        
-        
         
         if (GreaterThanEqualTo(HandSize, DeckSize, int.Parse(CopiesInDeck.Text), CopiesWanted) <= 0.5)
         {

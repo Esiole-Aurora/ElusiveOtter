@@ -35,6 +35,7 @@ public partial class RandomCard : UserControl
         {
             _cardData = FetchRandomCard(isCommander);
             cardImage = BuildCardPictureBox(_cardData);
+            
             this.Controls.Add(cardImage);
         }
         catch (Exception ex)
