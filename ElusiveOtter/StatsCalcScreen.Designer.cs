@@ -38,6 +38,19 @@ partial class StatsCalcScreen
         OutputPanel = new System.Windows.Forms.Panel();
         IssuesBox = new System.Windows.Forms.RichTextBox();
         InputPanel = new System.Windows.Forms.Panel();
+        RampInDeck = new System.Windows.Forms.TextBox();
+        label24 = new System.Windows.Forms.Label();
+        label23 = new System.Windows.Forms.Label();
+        label18 = new System.Windows.Forms.Label();
+        label19 = new System.Windows.Forms.Label();
+        label20 = new System.Windows.Forms.Label();
+        label21 = new System.Windows.Forms.Label();
+        label22 = new System.Windows.Forms.Label();
+        G_Land_Pips = new System.Windows.Forms.TextBox();
+        R_Land_Pips = new System.Windows.Forms.TextBox();
+        B_Land_Pips = new System.Windows.Forms.TextBox();
+        U_Land_Pips = new System.Windows.Forms.TextBox();
+        W_Land_Pips = new System.Windows.Forms.TextBox();
         label17 = new System.Windows.Forms.Label();
         label16 = new System.Windows.Forms.Label();
         label15 = new System.Windows.Forms.Label();
@@ -68,19 +81,8 @@ partial class StatsCalcScreen
         TwoMana = new System.Windows.Forms.TextBox();
         OneMana = new System.Windows.Forms.TextBox();
         ZeroMana = new System.Windows.Forms.TextBox();
-        G_Land_Pips = new System.Windows.Forms.TextBox();
-        R_Land_Pips = new System.Windows.Forms.TextBox();
-        B_Land_Pips = new System.Windows.Forms.TextBox();
-        U_Land_Pips = new System.Windows.Forms.TextBox();
-        W_Land_Pips = new System.Windows.Forms.TextBox();
-        label18 = new System.Windows.Forms.Label();
-        label19 = new System.Windows.Forms.Label();
-        label20 = new System.Windows.Forms.Label();
-        label21 = new System.Windows.Forms.Label();
-        label22 = new System.Windows.Forms.Label();
-        label23 = new System.Windows.Forms.Label();
-        RampInDeck = new System.Windows.Forms.TextBox();
-        label24 = new System.Windows.Forms.Label();
+        label25 = new System.Windows.Forms.Label();
+        CommanderCost = new System.Windows.Forms.TextBox();
         OutputPanel.SuspendLayout();
         InputPanel.SuspendLayout();
         CMC_Input_Panel.SuspendLayout();
@@ -161,6 +163,8 @@ partial class StatsCalcScreen
         // InputPanel
         // 
         InputPanel.BackColor = System.Drawing.Color.LightSlateGray;
+        InputPanel.Controls.Add(CommanderCost);
+        InputPanel.Controls.Add(label25);
         InputPanel.Controls.Add(RampInDeck);
         InputPanel.Controls.Add(label24);
         InputPanel.Controls.Add(label23);
@@ -194,6 +198,152 @@ partial class StatsCalcScreen
         InputPanel.Name = "InputPanel";
         InputPanel.Size = new System.Drawing.Size(321, 553);
         InputPanel.TabIndex = 11;
+        // 
+        // RampInDeck
+        // 
+        RampInDeck.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        RampInDeck.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        RampInDeck.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        RampInDeck.Location = new System.Drawing.Point(124, 35);
+        RampInDeck.Name = "RampInDeck";
+        RampInDeck.Size = new System.Drawing.Size(100, 20);
+        RampInDeck.TabIndex = 34;
+        RampInDeck.Text = "10";
+        // 
+        // label24
+        // 
+        label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label24.ForeColor = System.Drawing.Color.White;
+        label24.Location = new System.Drawing.Point(6, 35);
+        label24.Name = "label24";
+        label24.Size = new System.Drawing.Size(117, 23);
+        label24.TabIndex = 33;
+        label24.Text = "Ramp in Deck: ";
+        // 
+        // label23
+        // 
+        label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label23.ForeColor = System.Drawing.Color.White;
+        label23.Location = new System.Drawing.Point(6, 246);
+        label23.Name = "label23";
+        label23.Size = new System.Drawing.Size(100, 23);
+        label23.TabIndex = 32;
+        label23.Text = "Land Pips:";
+        // 
+        // label18
+        // 
+        label18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label18.ForeColor = System.Drawing.Color.White;
+        label18.Location = new System.Drawing.Point(161, 295);
+        label18.Name = "label18";
+        label18.Size = new System.Drawing.Size(31, 23);
+        label18.TabIndex = 31;
+        label18.Text = "G";
+        label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label19
+        // 
+        label19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label19.ForeColor = System.Drawing.Color.White;
+        label19.Location = new System.Drawing.Point(124, 295);
+        label19.Name = "label19";
+        label19.Size = new System.Drawing.Size(31, 23);
+        label19.TabIndex = 30;
+        label19.Text = "R";
+        label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label20
+        // 
+        label20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label20.ForeColor = System.Drawing.Color.White;
+        label20.Location = new System.Drawing.Point(87, 295);
+        label20.Name = "label20";
+        label20.Size = new System.Drawing.Size(31, 23);
+        label20.TabIndex = 29;
+        label20.Text = "B";
+        label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label21
+        // 
+        label21.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label21.ForeColor = System.Drawing.Color.White;
+        label21.Location = new System.Drawing.Point(50, 295);
+        label21.Name = "label21";
+        label21.Size = new System.Drawing.Size(31, 23);
+        label21.TabIndex = 28;
+        label21.Text = "U";
+        label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label22
+        // 
+        label22.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label22.ForeColor = System.Drawing.Color.White;
+        label22.Location = new System.Drawing.Point(13, 295);
+        label22.Name = "label22";
+        label22.Size = new System.Drawing.Size(31, 23);
+        label22.TabIndex = 27;
+        label22.Text = "W";
+        label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // G_Land_Pips
+        // 
+        G_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        G_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        G_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        G_Land_Pips.Location = new System.Drawing.Point(161, 272);
+        G_Land_Pips.Name = "G_Land_Pips";
+        G_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        G_Land_Pips.TabIndex = 26;
+        G_Land_Pips.Text = "0";
+        G_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        // 
+        // R_Land_Pips
+        // 
+        R_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        R_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        R_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        R_Land_Pips.Location = new System.Drawing.Point(124, 272);
+        R_Land_Pips.Name = "R_Land_Pips";
+        R_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        R_Land_Pips.TabIndex = 25;
+        R_Land_Pips.Text = "0";
+        R_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        // 
+        // B_Land_Pips
+        // 
+        B_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        B_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        B_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        B_Land_Pips.Location = new System.Drawing.Point(87, 272);
+        B_Land_Pips.Name = "B_Land_Pips";
+        B_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        B_Land_Pips.TabIndex = 24;
+        B_Land_Pips.Text = "0";
+        B_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        // 
+        // U_Land_Pips
+        // 
+        U_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        U_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        U_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        U_Land_Pips.Location = new System.Drawing.Point(50, 272);
+        U_Land_Pips.Name = "U_Land_Pips";
+        U_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        U_Land_Pips.TabIndex = 23;
+        U_Land_Pips.Text = "0";
+        U_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        // 
+        // W_Land_Pips
+        // 
+        W_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        W_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        W_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        W_Land_Pips.Location = new System.Drawing.Point(13, 272);
+        W_Land_Pips.Name = "W_Land_Pips";
+        W_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        W_Land_Pips.TabIndex = 22;
+        W_Land_Pips.Text = "0";
+        W_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
         // label17
         // 
@@ -546,151 +696,26 @@ partial class StatsCalcScreen
         ZeroMana.Text = "0";
         ZeroMana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
-        // G_Land_Pips
+        // label25
         // 
-        G_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        G_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        G_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        G_Land_Pips.Location = new System.Drawing.Point(161, 272);
-        G_Land_Pips.Name = "G_Land_Pips";
-        G_Land_Pips.Size = new System.Drawing.Size(31, 20);
-        G_Land_Pips.TabIndex = 26;
-        G_Land_Pips.Text = "0";
-        G_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label25.ForeColor = System.Drawing.Color.White;
+        label25.Location = new System.Drawing.Point(13, 333);
+        label25.Name = "label25";
+        label25.Size = new System.Drawing.Size(147, 23);
+        label25.TabIndex = 35;
+        label25.Text = "Commander Cost:";
         // 
-        // R_Land_Pips
+        // CommanderCost
         // 
-        R_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        R_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        R_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        R_Land_Pips.Location = new System.Drawing.Point(124, 272);
-        R_Land_Pips.Name = "R_Land_Pips";
-        R_Land_Pips.Size = new System.Drawing.Size(31, 20);
-        R_Land_Pips.TabIndex = 25;
-        R_Land_Pips.Text = "0";
-        R_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-        // 
-        // B_Land_Pips
-        // 
-        B_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        B_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        B_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        B_Land_Pips.Location = new System.Drawing.Point(87, 272);
-        B_Land_Pips.Name = "B_Land_Pips";
-        B_Land_Pips.Size = new System.Drawing.Size(31, 20);
-        B_Land_Pips.TabIndex = 24;
-        B_Land_Pips.Text = "0";
-        B_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-        // 
-        // U_Land_Pips
-        // 
-        U_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        U_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        U_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        U_Land_Pips.Location = new System.Drawing.Point(50, 272);
-        U_Land_Pips.Name = "U_Land_Pips";
-        U_Land_Pips.Size = new System.Drawing.Size(31, 20);
-        U_Land_Pips.TabIndex = 23;
-        U_Land_Pips.Text = "0";
-        U_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-        // 
-        // W_Land_Pips
-        // 
-        W_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        W_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        W_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        W_Land_Pips.Location = new System.Drawing.Point(13, 272);
-        W_Land_Pips.Name = "W_Land_Pips";
-        W_Land_Pips.Size = new System.Drawing.Size(31, 20);
-        W_Land_Pips.TabIndex = 22;
-        W_Land_Pips.Text = "0";
-        W_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-        // 
-        // label18
-        // 
-        label18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label18.ForeColor = System.Drawing.Color.White;
-        label18.Location = new System.Drawing.Point(161, 295);
-        label18.Name = "label18";
-        label18.Size = new System.Drawing.Size(31, 23);
-        label18.TabIndex = 31;
-        label18.Text = "G";
-        label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        // 
-        // label19
-        // 
-        label19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label19.ForeColor = System.Drawing.Color.White;
-        label19.Location = new System.Drawing.Point(124, 295);
-        label19.Name = "label19";
-        label19.Size = new System.Drawing.Size(31, 23);
-        label19.TabIndex = 30;
-        label19.Text = "R";
-        label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        // 
-        // label20
-        // 
-        label20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label20.ForeColor = System.Drawing.Color.White;
-        label20.Location = new System.Drawing.Point(87, 295);
-        label20.Name = "label20";
-        label20.Size = new System.Drawing.Size(31, 23);
-        label20.TabIndex = 29;
-        label20.Text = "B";
-        label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        // 
-        // label21
-        // 
-        label21.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label21.ForeColor = System.Drawing.Color.White;
-        label21.Location = new System.Drawing.Point(50, 295);
-        label21.Name = "label21";
-        label21.Size = new System.Drawing.Size(31, 23);
-        label21.TabIndex = 28;
-        label21.Text = "U";
-        label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        // 
-        // label22
-        // 
-        label22.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label22.ForeColor = System.Drawing.Color.White;
-        label22.Location = new System.Drawing.Point(13, 295);
-        label22.Name = "label22";
-        label22.Size = new System.Drawing.Size(31, 23);
-        label22.TabIndex = 27;
-        label22.Text = "W";
-        label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        // 
-        // label23
-        // 
-        label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label23.ForeColor = System.Drawing.Color.White;
-        label23.Location = new System.Drawing.Point(6, 246);
-        label23.Name = "label23";
-        label23.Size = new System.Drawing.Size(100, 23);
-        label23.TabIndex = 32;
-        label23.Text = "Land Pips:";
-        // 
-        // RampInDeck
-        // 
-        RampInDeck.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        RampInDeck.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        RampInDeck.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        RampInDeck.Location = new System.Drawing.Point(124, 35);
-        RampInDeck.Name = "RampInDeck";
-        RampInDeck.Size = new System.Drawing.Size(100, 20);
-        RampInDeck.TabIndex = 34;
-        RampInDeck.Text = "10";
-        // 
-        // label24
-        // 
-        label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label24.ForeColor = System.Drawing.Color.White;
-        label24.Location = new System.Drawing.Point(6, 35);
-        label24.Name = "label24";
-        label24.Size = new System.Drawing.Size(117, 23);
-        label24.TabIndex = 33;
-        label24.Text = "Ramp in Deck: ";
+        CommanderCost.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        CommanderCost.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        CommanderCost.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        CommanderCost.Location = new System.Drawing.Point(152, 333);
+        CommanderCost.Name = "CommanderCost";
+        CommanderCost.Size = new System.Drawing.Size(72, 20);
+        CommanderCost.TabIndex = 36;
+        CommanderCost.Text = "0";
         // 
         // StatsCalcScreen
         // 
@@ -708,6 +733,10 @@ partial class StatsCalcScreen
         CMC_Input_Panel.PerformLayout();
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.TextBox CommanderCost;
+
+    private System.Windows.Forms.Label label25;
 
     private System.Windows.Forms.TextBox RampInDeck;
     private System.Windows.Forms.Label label24;

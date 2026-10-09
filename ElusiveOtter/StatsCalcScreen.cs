@@ -87,17 +87,34 @@ public partial class StatsCalcScreen : UserControl
     
     private void CalculateButton_Click(object sender, EventArgs e) 
     {
-        var manaHistogram = make_mana_histogram(get_curve());
-        var SpellPipHistogram = make_spell_pip_histogram();
-        var LandPipHistogram = make_land_pip_histogram();
+        var curve = get_curve();
+        var manaHistogram = make_mana_histogram(curve);
+        var spellPipHistogram = make_spell_pip_histogram();
+        var landPipHistogram = make_land_pip_histogram();
         
         _issues.Clear();
         try
         {
-
-            if (GreaterThanEqualTo(HandSize, DeckSize, int.Parse(CopiesInDeck.Text), CopiesWanted) <= 0.5)
+            var avg_mv = 0;
+            var total = 0;
+            var land_count = int.Parse(CopiesInDeck.Text);
+            var ramp_count = int.Parse(RampInDeck.Text);
+            foreach (var key in curve.Keys)
             {
-                _issues.Add("Odds of opening 3 or more lands <= 50%: Consider more lands for consistency");
+                avg_mv += curve[key] * key;
+                total += curve[key];
+            }
+            // ReSharper disable once IntDivisionByZero
+            avg_mv /= total;
+            var recommendedLands = 31.42 + (3.13 * avg_mv) - (0.28 * ramp_count);
+            if (land_count < recommendedLands)
+            {
+                _issues.Add($"Land count is below recommended amount of {recommendedLands:3F}");
+            }
+
+            if (land_count > recommendedLands + 3)
+            {
+                _issues.Add($"Land count is significantly over recommended amount of {recommendedLands:3F}, it is likely that you may flood");
             }
 
             if (manaHistogram[0] + manaHistogram[1] + manaHistogram[2] < 0.3)
@@ -115,16 +132,16 @@ public partial class StatsCalcScreen : UserControl
                 _issues.Add("Your curve is potentially top-heavy: Consider playing more cheap spells.");
             }
 
-            foreach (var key in SpellPipHistogram.Keys)
+            foreach (var key in spellPipHistogram.Keys)
             {
-                if (SpellPipHistogram[key] > LandPipHistogram[key] + 0.15)
+                if (spellPipHistogram[key] > landPipHistogram[key] + 0.15)
                 {
                     _issues.Add($"Not enough {key} producing Lands. \n Spell Pips : Land Pips" +
-                                $" \n {SpellPipHistogram[key]} : {LandPipHistogram[key]}");
-                } else if (SpellPipHistogram[key] < LandPipHistogram[key] - 0.15)
+                                $" \n {spellPipHistogram[key]} : {landPipHistogram[key]}");
+                } else if (spellPipHistogram[key] < landPipHistogram[key] - 0.15)
                 {
                     _issues.Add($"Too many {key} producing Lands. \n Spell Pips : Land Pips" +
-                                $" \n {SpellPipHistogram[key]:F3} : {LandPipHistogram[key]:F3}");
+                                $" \n {spellPipHistogram[key]:F3} : {landPipHistogram[key]:F3}");
                 }
             }
 
