@@ -94,7 +94,7 @@ public partial class StatsCalcScreen : UserControl
         }
         else
         {
-            IssuesBox.Text = "No issues found.";
+            IssuesBox.Text = @"No issues found.";
         }
     }
     

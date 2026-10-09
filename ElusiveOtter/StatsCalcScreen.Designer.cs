@@ -56,6 +56,13 @@ partial class StatsCalcScreen
         TwoMana = new System.Windows.Forms.TextBox();
         OneMana = new System.Windows.Forms.TextBox();
         ZeroMana = new System.Windows.Forms.TextBox();
+        panel1 = new System.Windows.Forms.Panel();
+        textBox1 = new System.Windows.Forms.TextBox();
+        textBox2 = new System.Windows.Forms.TextBox();
+        textBox3 = new System.Windows.Forms.TextBox();
+        textBox4 = new System.Windows.Forms.TextBox();
+        textBox5 = new System.Windows.Forms.TextBox();
+        label12 = new System.Windows.Forms.Label();
         OutputPanel.SuspendLayout();
         InputPanel.SuspendLayout();
         CMC_Input_Panel.SuspendLayout();
@@ -136,6 +143,12 @@ partial class StatsCalcScreen
         // InputPanel
         // 
         InputPanel.BackColor = System.Drawing.Color.LightSlateGray;
+        InputPanel.Controls.Add(label12);
+        InputPanel.Controls.Add(textBox5);
+        InputPanel.Controls.Add(textBox4);
+        InputPanel.Controls.Add(textBox3);
+        InputPanel.Controls.Add(textBox2);
+        InputPanel.Controls.Add(textBox1);
         InputPanel.Controls.Add(CMC_Input_Panel);
         InputPanel.Controls.Add(CopiesInDeck);
         InputPanel.Controls.Add(label3);
@@ -148,6 +161,7 @@ partial class StatsCalcScreen
         // 
         // CMC_Input_Panel
         // 
+        CMC_Input_Panel.Controls.Add(panel1);
         CMC_Input_Panel.Controls.Add(label11);
         CMC_Input_Panel.Controls.Add(label10);
         CMC_Input_Panel.Controls.Add(label9);
@@ -356,6 +370,72 @@ partial class StatsCalcScreen
         ZeroMana.TabIndex = 0;
         ZeroMana.Text = "0";
         // 
+        // panel1
+        // 
+        panel1.Location = new System.Drawing.Point(3, 106);
+        panel1.Name = "panel1";
+        panel1.Size = new System.Drawing.Size(318, 100);
+        panel1.TabIndex = 11;
+        // 
+        // textBox1
+        // 
+        textBox1.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        textBox1.Location = new System.Drawing.Point(13, 194);
+        textBox1.Name = "textBox1";
+        textBox1.Size = new System.Drawing.Size(31, 20);
+        textBox1.TabIndex = 11;
+        // 
+        // textBox2
+        // 
+        textBox2.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        textBox2.Location = new System.Drawing.Point(50, 194);
+        textBox2.Name = "textBox2";
+        textBox2.Size = new System.Drawing.Size(31, 20);
+        textBox2.TabIndex = 12;
+        // 
+        // textBox3
+        // 
+        textBox3.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        textBox3.Location = new System.Drawing.Point(87, 194);
+        textBox3.Name = "textBox3";
+        textBox3.Size = new System.Drawing.Size(31, 20);
+        textBox3.TabIndex = 13;
+        // 
+        // textBox4
+        // 
+        textBox4.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        textBox4.Location = new System.Drawing.Point(124, 194);
+        textBox4.Name = "textBox4";
+        textBox4.Size = new System.Drawing.Size(31, 20);
+        textBox4.TabIndex = 14;
+        // 
+        // textBox5
+        // 
+        textBox5.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        textBox5.Location = new System.Drawing.Point(161, 194);
+        textBox5.Name = "textBox5";
+        textBox5.Size = new System.Drawing.Size(31, 20);
+        textBox5.TabIndex = 15;
+        // 
+        // label12
+        // 
+        label12.ForeColor = System.Drawing.Color.White;
+        label12.Location = new System.Drawing.Point(129, 259);
+        label12.Name = "label12";
+        label12.Size = new System.Drawing.Size(100, 23);
+        label12.TabIndex = 16;
+        label12.Text = "Spell Pips:";
+        // 
         // StatsCalcScreen
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -372,6 +452,15 @@ partial class StatsCalcScreen
         CMC_Input_Panel.PerformLayout();
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.TextBox textBox2;
+    private System.Windows.Forms.TextBox textBox3;
+    private System.Windows.Forms.TextBox textBox4;
+    private System.Windows.Forms.TextBox textBox5;
+    private System.Windows.Forms.Label label12;
+
+    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.TextBox textBox1;
 
     private System.Windows.Forms.Label label11;
 
