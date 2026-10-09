@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 
 namespace Deck_Randomiser_3;
 
@@ -22,15 +23,68 @@ public partial class StatsCalcScreen : UserControl
         InitializeComponent();
     }
 
-    
-    
-    private void CalculateButton_Click(object sender, EventArgs e)
-    {
-        _issues.Clear();
-        
-        if (GreaterThanEqualTo(HandSize, DeckSize, int.Parse(CopiesInDeck.Text), CopiesWanted) <= 0.5)
+    private Dictionary<int, int> get_curve()
+    { 
+        Dictionary<int,int> curve = new Dictionary<int, int>()
         {
-            _issues.Add("Odds of opening 3 or more lands <= 50%: Consider more lands for consistency");
+            { 0, int.Parse(ZeroMana.Text)},
+            { 1, int.Parse(OneMana.Text)},
+            { 2, int.Parse(TwoMana.Text)},
+            { 3, int.Parse(ThreeMana.Text)},
+            { 4, int.Parse(FourMana.Text)},
+            { 5, int.Parse(FiveMana.Text)},
+            { 6, int.Parse(SixMana.Text)},
+            { 7, int.Parse(SevenMana.Text)}
+        };
+        return curve;
+    }
+
+    [SuppressMessage("ReSharper", "PossibleLossOfFraction")]
+    private static Dictionary<int, double> make_histogram(Dictionary<int, int> curve)
+    {
+        var histogram = new Dictionary<int, double>();
+        var total = curve.Values.Sum();
+        if (total==0) {return histogram;}
+        foreach (var key in curve.Keys)
+        {
+            var val = (double) curve[key] / total;
+            histogram.Add(key, val);
+        }
+        return histogram;
+    }
+    
+    private void CalculateButton_Click(object sender, EventArgs e) 
+    {
+        var manaHistogram = make_histogram(get_curve());
+        
+        _issues.Clear();
+        try
+        {
+
+            if (GreaterThanEqualTo(HandSize, DeckSize, int.Parse(CopiesInDeck.Text), CopiesWanted) <= 0.5)
+            {
+                _issues.Add("Odds of opening 3 or more lands <= 50%: Consider more lands for consistency");
+            }
+
+            if (manaHistogram[0] + manaHistogram[1] + manaHistogram[2] < 0.3)
+            {
+                _issues.Add("You may be lacking plays in the early game: Consider more cheap spells.");
+            }
+
+            if (manaHistogram[0] + manaHistogram[1] + manaHistogram[2] > 0.7)
+            {
+                _issues.Add("You are running a lot of cheap spells, you may lack meaningful plays in the late game.");
+            }
+
+            if (manaHistogram[7] + manaHistogram[6] + manaHistogram[5] > 0.2)
+            {
+                _issues.Add("Your curve is potentially top-heavy: Consider playing more cheap spells.");
+            }
+
+        }
+        catch (Exception ex)
+        {
+            _issues.Add(ex.Message);
         }
 
         IssuesBox.Text = "";
@@ -102,5 +156,4 @@ public partial class StatsCalcScreen : UserControl
 
         return j;
     }
-    
 }
