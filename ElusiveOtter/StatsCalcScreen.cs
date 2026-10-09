@@ -23,6 +23,38 @@ public partial class StatsCalcScreen : UserControl
         InitializeComponent();
     }
 
+    private Dictionary<char, double> make_spell_pip_histogram()
+    {
+        var total = int.Parse(W_Spell_Pips.Text) + int.Parse(U_Spell_Pips.Text) + int.Parse(B_Spell_Pips.Text) +
+                    int.Parse(R_Spell_Pips.Text) + int.Parse(W_Spell_Pips.Text);
+        if (total == 0) return new Dictionary<char, double>();
+        var dict = new System.Collections.Generic.Dictionary<char, double>()
+        {
+            {'W', (double)int.Parse(W_Spell_Pips.Text) / total},
+            {'U', (double)int.Parse(U_Spell_Pips.Text) / total},
+            {'B', (double)int.Parse(B_Spell_Pips.Text) / total},
+            {'R', (double)int.Parse(R_Spell_Pips.Text) / total},
+            {'G', (double)int.Parse(W_Spell_Pips.Text) / total}
+        };
+        return dict;
+    }
+    
+    private Dictionary<char, double> make_land_pip_histogram()
+    {
+        var total = int.Parse(W_Land_Pips.Text) + int.Parse(U_Land_Pips.Text) + int.Parse(B_Land_Pips.Text) +
+                    int.Parse(R_Land_Pips.Text) + int.Parse(W_Land_Pips.Text);
+        if (total == 0) return new Dictionary<char, double>();
+        var dict = new System.Collections.Generic.Dictionary<char, double>()
+        {
+            {'W', (double)int.Parse(W_Land_Pips.Text) / total},
+            {'U', (double)int.Parse(U_Land_Pips.Text) / total},
+            {'B', (double)int.Parse(B_Land_Pips.Text) / total},
+            {'R', (double)int.Parse(R_Land_Pips.Text) / total},
+            {'G', (double)int.Parse(W_Land_Pips.Text) / total}
+        };
+        return dict;
+    }
+
     private Dictionary<int, int> get_curve()
     { 
         Dictionary<int,int> curve = new Dictionary<int, int>()
@@ -40,7 +72,7 @@ public partial class StatsCalcScreen : UserControl
     }
 
     [SuppressMessage("ReSharper", "PossibleLossOfFraction")]
-    private static Dictionary<int, double> make_histogram(Dictionary<int, int> curve)
+    private static Dictionary<int, double> make_mana_histogram(Dictionary<int, int> curve)
     {
         var histogram = new Dictionary<int, double>();
         var total = curve.Values.Sum();
@@ -55,7 +87,9 @@ public partial class StatsCalcScreen : UserControl
     
     private void CalculateButton_Click(object sender, EventArgs e) 
     {
-        var manaHistogram = make_histogram(get_curve());
+        var manaHistogram = make_mana_histogram(get_curve());
+        var SpellPipHistogram = make_spell_pip_histogram();
+        var LandPipHistogram = make_land_pip_histogram();
         
         _issues.Clear();
         try
@@ -79,6 +113,19 @@ public partial class StatsCalcScreen : UserControl
             if (manaHistogram[7] + manaHistogram[6] + manaHistogram[5] > 0.2)
             {
                 _issues.Add("Your curve is potentially top-heavy: Consider playing more cheap spells.");
+            }
+
+            foreach (var key in SpellPipHistogram.Keys)
+            {
+                if (SpellPipHistogram[key] > LandPipHistogram[key] + 0.15)
+                {
+                    _issues.Add($"Not enough {key} producing Lands. \n Spell Pips : Land Pips" +
+                                $" \n {SpellPipHistogram[key]} : {LandPipHistogram[key]}");
+                } else if (SpellPipHistogram[key] < LandPipHistogram[key] - 0.15)
+                {
+                    _issues.Add($"Too many {key} producing Lands. \n Spell Pips : Land Pips" +
+                                $" \n {SpellPipHistogram[key]:F3} : {LandPipHistogram[key]:F3}");
+                }
             }
 
         }

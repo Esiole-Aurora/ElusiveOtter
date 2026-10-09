@@ -38,7 +38,19 @@ partial class StatsCalcScreen
         OutputPanel = new System.Windows.Forms.Panel();
         IssuesBox = new System.Windows.Forms.RichTextBox();
         InputPanel = new System.Windows.Forms.Panel();
+        label17 = new System.Windows.Forms.Label();
+        label16 = new System.Windows.Forms.Label();
+        label15 = new System.Windows.Forms.Label();
+        label14 = new System.Windows.Forms.Label();
+        label13 = new System.Windows.Forms.Label();
+        label12 = new System.Windows.Forms.Label();
+        G_Spell_Pips = new System.Windows.Forms.TextBox();
+        R_Spell_Pips = new System.Windows.Forms.TextBox();
+        B_Spell_Pips = new System.Windows.Forms.TextBox();
+        U_Spell_Pips = new System.Windows.Forms.TextBox();
+        W_Spell_Pips = new System.Windows.Forms.TextBox();
         CMC_Input_Panel = new System.Windows.Forms.Panel();
+        panel1 = new System.Windows.Forms.Panel();
         label11 = new System.Windows.Forms.Label();
         label10 = new System.Windows.Forms.Label();
         label9 = new System.Windows.Forms.Label();
@@ -56,13 +68,19 @@ partial class StatsCalcScreen
         TwoMana = new System.Windows.Forms.TextBox();
         OneMana = new System.Windows.Forms.TextBox();
         ZeroMana = new System.Windows.Forms.TextBox();
-        panel1 = new System.Windows.Forms.Panel();
-        textBox1 = new System.Windows.Forms.TextBox();
-        textBox2 = new System.Windows.Forms.TextBox();
-        textBox3 = new System.Windows.Forms.TextBox();
-        textBox4 = new System.Windows.Forms.TextBox();
-        textBox5 = new System.Windows.Forms.TextBox();
-        label12 = new System.Windows.Forms.Label();
+        G_Land_Pips = new System.Windows.Forms.TextBox();
+        R_Land_Pips = new System.Windows.Forms.TextBox();
+        B_Land_Pips = new System.Windows.Forms.TextBox();
+        U_Land_Pips = new System.Windows.Forms.TextBox();
+        W_Land_Pips = new System.Windows.Forms.TextBox();
+        label18 = new System.Windows.Forms.Label();
+        label19 = new System.Windows.Forms.Label();
+        label20 = new System.Windows.Forms.Label();
+        label21 = new System.Windows.Forms.Label();
+        label22 = new System.Windows.Forms.Label();
+        label23 = new System.Windows.Forms.Label();
+        RampInDeck = new System.Windows.Forms.TextBox();
+        label24 = new System.Windows.Forms.Label();
         OutputPanel.SuspendLayout();
         InputPanel.SuspendLayout();
         CMC_Input_Panel.SuspendLayout();
@@ -79,7 +97,7 @@ partial class StatsCalcScreen
         // 
         label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
         label3.ForeColor = System.Drawing.Color.White;
-        label3.Location = new System.Drawing.Point(14, 24);
+        label3.Location = new System.Drawing.Point(6, 12);
         label3.Name = "label3";
         label3.Size = new System.Drawing.Size(117, 23);
         label3.TabIndex = 2;
@@ -90,7 +108,7 @@ partial class StatsCalcScreen
         CopiesInDeck.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
         CopiesInDeck.BorderStyle = System.Windows.Forms.BorderStyle.None;
         CopiesInDeck.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        CopiesInDeck.Location = new System.Drawing.Point(124, 24);
+        CopiesInDeck.Location = new System.Drawing.Point(124, 12);
         CopiesInDeck.Name = "CopiesInDeck";
         CopiesInDeck.Size = new System.Drawing.Size(100, 20);
         CopiesInDeck.TabIndex = 8;
@@ -143,12 +161,30 @@ partial class StatsCalcScreen
         // InputPanel
         // 
         InputPanel.BackColor = System.Drawing.Color.LightSlateGray;
+        InputPanel.Controls.Add(RampInDeck);
+        InputPanel.Controls.Add(label24);
+        InputPanel.Controls.Add(label23);
+        InputPanel.Controls.Add(label18);
+        InputPanel.Controls.Add(label19);
+        InputPanel.Controls.Add(label20);
+        InputPanel.Controls.Add(label21);
+        InputPanel.Controls.Add(label22);
+        InputPanel.Controls.Add(G_Land_Pips);
+        InputPanel.Controls.Add(R_Land_Pips);
+        InputPanel.Controls.Add(B_Land_Pips);
+        InputPanel.Controls.Add(U_Land_Pips);
+        InputPanel.Controls.Add(W_Land_Pips);
+        InputPanel.Controls.Add(label17);
+        InputPanel.Controls.Add(label16);
+        InputPanel.Controls.Add(label15);
+        InputPanel.Controls.Add(label14);
+        InputPanel.Controls.Add(label13);
         InputPanel.Controls.Add(label12);
-        InputPanel.Controls.Add(textBox5);
-        InputPanel.Controls.Add(textBox4);
-        InputPanel.Controls.Add(textBox3);
-        InputPanel.Controls.Add(textBox2);
-        InputPanel.Controls.Add(textBox1);
+        InputPanel.Controls.Add(G_Spell_Pips);
+        InputPanel.Controls.Add(R_Spell_Pips);
+        InputPanel.Controls.Add(B_Spell_Pips);
+        InputPanel.Controls.Add(U_Spell_Pips);
+        InputPanel.Controls.Add(W_Spell_Pips);
         InputPanel.Controls.Add(CMC_Input_Panel);
         InputPanel.Controls.Add(CopiesInDeck);
         InputPanel.Controls.Add(label3);
@@ -158,6 +194,131 @@ partial class StatsCalcScreen
         InputPanel.Name = "InputPanel";
         InputPanel.Size = new System.Drawing.Size(321, 553);
         InputPanel.TabIndex = 11;
+        // 
+        // label17
+        // 
+        label17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label17.ForeColor = System.Drawing.Color.White;
+        label17.Location = new System.Drawing.Point(161, 217);
+        label17.Name = "label17";
+        label17.Size = new System.Drawing.Size(31, 23);
+        label17.TabIndex = 21;
+        label17.Text = "G";
+        label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label16
+        // 
+        label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label16.ForeColor = System.Drawing.Color.White;
+        label16.Location = new System.Drawing.Point(124, 217);
+        label16.Name = "label16";
+        label16.Size = new System.Drawing.Size(31, 23);
+        label16.TabIndex = 20;
+        label16.Text = "R";
+        label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label15
+        // 
+        label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label15.ForeColor = System.Drawing.Color.White;
+        label15.Location = new System.Drawing.Point(87, 217);
+        label15.Name = "label15";
+        label15.Size = new System.Drawing.Size(31, 23);
+        label15.TabIndex = 19;
+        label15.Text = "B";
+        label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label14
+        // 
+        label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label14.ForeColor = System.Drawing.Color.White;
+        label14.Location = new System.Drawing.Point(50, 217);
+        label14.Name = "label14";
+        label14.Size = new System.Drawing.Size(31, 23);
+        label14.TabIndex = 18;
+        label14.Text = "U";
+        label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label13
+        // 
+        label13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label13.ForeColor = System.Drawing.Color.White;
+        label13.Location = new System.Drawing.Point(13, 217);
+        label13.Name = "label13";
+        label13.Size = new System.Drawing.Size(31, 23);
+        label13.TabIndex = 17;
+        label13.Text = "W";
+        label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label12
+        // 
+        label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label12.ForeColor = System.Drawing.Color.White;
+        label12.Location = new System.Drawing.Point(6, 168);
+        label12.Name = "label12";
+        label12.Size = new System.Drawing.Size(100, 23);
+        label12.TabIndex = 16;
+        label12.Text = "Spell Pips:";
+        // 
+        // G_Spell_Pips
+        // 
+        G_Spell_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        G_Spell_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        G_Spell_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        G_Spell_Pips.Location = new System.Drawing.Point(161, 194);
+        G_Spell_Pips.Name = "G_Spell_Pips";
+        G_Spell_Pips.Size = new System.Drawing.Size(31, 20);
+        G_Spell_Pips.TabIndex = 15;
+        G_Spell_Pips.Text = "0";
+        G_Spell_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        // 
+        // R_Spell_Pips
+        // 
+        R_Spell_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        R_Spell_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        R_Spell_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        R_Spell_Pips.Location = new System.Drawing.Point(124, 194);
+        R_Spell_Pips.Name = "R_Spell_Pips";
+        R_Spell_Pips.Size = new System.Drawing.Size(31, 20);
+        R_Spell_Pips.TabIndex = 14;
+        R_Spell_Pips.Text = "0";
+        R_Spell_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        // 
+        // B_Spell_Pips
+        // 
+        B_Spell_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        B_Spell_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        B_Spell_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        B_Spell_Pips.Location = new System.Drawing.Point(87, 194);
+        B_Spell_Pips.Name = "B_Spell_Pips";
+        B_Spell_Pips.Size = new System.Drawing.Size(31, 20);
+        B_Spell_Pips.TabIndex = 13;
+        B_Spell_Pips.Text = "0";
+        B_Spell_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        // 
+        // U_Spell_Pips
+        // 
+        U_Spell_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        U_Spell_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        U_Spell_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        U_Spell_Pips.Location = new System.Drawing.Point(50, 194);
+        U_Spell_Pips.Name = "U_Spell_Pips";
+        U_Spell_Pips.Size = new System.Drawing.Size(31, 20);
+        U_Spell_Pips.TabIndex = 12;
+        U_Spell_Pips.Text = "0";
+        U_Spell_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        // 
+        // W_Spell_Pips
+        // 
+        W_Spell_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        W_Spell_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        W_Spell_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        W_Spell_Pips.Location = new System.Drawing.Point(13, 194);
+        W_Spell_Pips.Name = "W_Spell_Pips";
+        W_Spell_Pips.Size = new System.Drawing.Size(31, 20);
+        W_Spell_Pips.TabIndex = 11;
+        W_Spell_Pips.Text = "0";
+        W_Spell_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
         // CMC_Input_Panel
         // 
@@ -183,6 +344,13 @@ partial class StatsCalcScreen
         CMC_Input_Panel.Name = "CMC_Input_Panel";
         CMC_Input_Panel.Size = new System.Drawing.Size(321, 100);
         CMC_Input_Panel.TabIndex = 10;
+        // 
+        // panel1
+        // 
+        panel1.Location = new System.Drawing.Point(3, 106);
+        panel1.Name = "panel1";
+        panel1.Size = new System.Drawing.Size(318, 100);
+        panel1.TabIndex = 11;
         // 
         // label11
         // 
@@ -292,6 +460,7 @@ partial class StatsCalcScreen
         SevenMana.Size = new System.Drawing.Size(31, 20);
         SevenMana.TabIndex = 7;
         SevenMana.Text = "0";
+        SevenMana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
         // SixMana
         // 
@@ -303,6 +472,7 @@ partial class StatsCalcScreen
         SixMana.Size = new System.Drawing.Size(31, 20);
         SixMana.TabIndex = 6;
         SixMana.Text = "0";
+        SixMana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
         // FiveMana
         // 
@@ -314,6 +484,7 @@ partial class StatsCalcScreen
         FiveMana.Size = new System.Drawing.Size(31, 20);
         FiveMana.TabIndex = 5;
         FiveMana.Text = "0";
+        FiveMana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
         // FourMana
         // 
@@ -325,6 +496,7 @@ partial class StatsCalcScreen
         FourMana.Size = new System.Drawing.Size(31, 20);
         FourMana.TabIndex = 4;
         FourMana.Text = "0";
+        FourMana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
         // ThreeMana
         // 
@@ -336,6 +508,7 @@ partial class StatsCalcScreen
         ThreeMana.Size = new System.Drawing.Size(31, 20);
         ThreeMana.TabIndex = 3;
         ThreeMana.Text = "0";
+        ThreeMana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
         // TwoMana
         // 
@@ -347,6 +520,7 @@ partial class StatsCalcScreen
         TwoMana.Size = new System.Drawing.Size(31, 20);
         TwoMana.TabIndex = 2;
         TwoMana.Text = "0";
+        TwoMana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
         // OneMana
         // 
@@ -358,6 +532,7 @@ partial class StatsCalcScreen
         OneMana.Size = new System.Drawing.Size(31, 20);
         OneMana.TabIndex = 1;
         OneMana.Text = "0";
+        OneMana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
         // ZeroMana
         // 
@@ -369,72 +544,153 @@ partial class StatsCalcScreen
         ZeroMana.Size = new System.Drawing.Size(31, 20);
         ZeroMana.TabIndex = 0;
         ZeroMana.Text = "0";
+        ZeroMana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
-        // panel1
+        // G_Land_Pips
         // 
-        panel1.Location = new System.Drawing.Point(3, 106);
-        panel1.Name = "panel1";
-        panel1.Size = new System.Drawing.Size(318, 100);
-        panel1.TabIndex = 11;
+        G_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        G_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        G_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        G_Land_Pips.Location = new System.Drawing.Point(161, 272);
+        G_Land_Pips.Name = "G_Land_Pips";
+        G_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        G_Land_Pips.TabIndex = 26;
+        G_Land_Pips.Text = "0";
+        G_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
-        // textBox1
+        // R_Land_Pips
         // 
-        textBox1.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        textBox1.Location = new System.Drawing.Point(13, 194);
-        textBox1.Name = "textBox1";
-        textBox1.Size = new System.Drawing.Size(31, 20);
-        textBox1.TabIndex = 11;
+        R_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        R_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        R_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        R_Land_Pips.Location = new System.Drawing.Point(124, 272);
+        R_Land_Pips.Name = "R_Land_Pips";
+        R_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        R_Land_Pips.TabIndex = 25;
+        R_Land_Pips.Text = "0";
+        R_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
-        // textBox2
+        // B_Land_Pips
         // 
-        textBox2.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        textBox2.Location = new System.Drawing.Point(50, 194);
-        textBox2.Name = "textBox2";
-        textBox2.Size = new System.Drawing.Size(31, 20);
-        textBox2.TabIndex = 12;
+        B_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        B_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        B_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        B_Land_Pips.Location = new System.Drawing.Point(87, 272);
+        B_Land_Pips.Name = "B_Land_Pips";
+        B_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        B_Land_Pips.TabIndex = 24;
+        B_Land_Pips.Text = "0";
+        B_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
-        // textBox3
+        // U_Land_Pips
         // 
-        textBox3.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        textBox3.Location = new System.Drawing.Point(87, 194);
-        textBox3.Name = "textBox3";
-        textBox3.Size = new System.Drawing.Size(31, 20);
-        textBox3.TabIndex = 13;
+        U_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        U_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        U_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        U_Land_Pips.Location = new System.Drawing.Point(50, 272);
+        U_Land_Pips.Name = "U_Land_Pips";
+        U_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        U_Land_Pips.TabIndex = 23;
+        U_Land_Pips.Text = "0";
+        U_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
-        // textBox4
+        // W_Land_Pips
         // 
-        textBox4.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        textBox4.Location = new System.Drawing.Point(124, 194);
-        textBox4.Name = "textBox4";
-        textBox4.Size = new System.Drawing.Size(31, 20);
-        textBox4.TabIndex = 14;
+        W_Land_Pips.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        W_Land_Pips.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        W_Land_Pips.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        W_Land_Pips.Location = new System.Drawing.Point(13, 272);
+        W_Land_Pips.Name = "W_Land_Pips";
+        W_Land_Pips.Size = new System.Drawing.Size(31, 20);
+        W_Land_Pips.TabIndex = 22;
+        W_Land_Pips.Text = "0";
+        W_Land_Pips.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         // 
-        // textBox5
+        // label18
         // 
-        textBox5.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
-        textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
-        textBox5.Location = new System.Drawing.Point(161, 194);
-        textBox5.Name = "textBox5";
-        textBox5.Size = new System.Drawing.Size(31, 20);
-        textBox5.TabIndex = 15;
+        label18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label18.ForeColor = System.Drawing.Color.White;
+        label18.Location = new System.Drawing.Point(161, 295);
+        label18.Name = "label18";
+        label18.Size = new System.Drawing.Size(31, 23);
+        label18.TabIndex = 31;
+        label18.Text = "G";
+        label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
-        // label12
+        // label19
         // 
-        label12.ForeColor = System.Drawing.Color.White;
-        label12.Location = new System.Drawing.Point(129, 259);
-        label12.Name = "label12";
-        label12.Size = new System.Drawing.Size(100, 23);
-        label12.TabIndex = 16;
-        label12.Text = "Spell Pips:";
+        label19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label19.ForeColor = System.Drawing.Color.White;
+        label19.Location = new System.Drawing.Point(124, 295);
+        label19.Name = "label19";
+        label19.Size = new System.Drawing.Size(31, 23);
+        label19.TabIndex = 30;
+        label19.Text = "R";
+        label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label20
+        // 
+        label20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label20.ForeColor = System.Drawing.Color.White;
+        label20.Location = new System.Drawing.Point(87, 295);
+        label20.Name = "label20";
+        label20.Size = new System.Drawing.Size(31, 23);
+        label20.TabIndex = 29;
+        label20.Text = "B";
+        label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label21
+        // 
+        label21.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label21.ForeColor = System.Drawing.Color.White;
+        label21.Location = new System.Drawing.Point(50, 295);
+        label21.Name = "label21";
+        label21.Size = new System.Drawing.Size(31, 23);
+        label21.TabIndex = 28;
+        label21.Text = "U";
+        label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label22
+        // 
+        label22.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label22.ForeColor = System.Drawing.Color.White;
+        label22.Location = new System.Drawing.Point(13, 295);
+        label22.Name = "label22";
+        label22.Size = new System.Drawing.Size(31, 23);
+        label22.TabIndex = 27;
+        label22.Text = "W";
+        label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label23
+        // 
+        label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label23.ForeColor = System.Drawing.Color.White;
+        label23.Location = new System.Drawing.Point(6, 246);
+        label23.Name = "label23";
+        label23.Size = new System.Drawing.Size(100, 23);
+        label23.TabIndex = 32;
+        label23.Text = "Land Pips:";
+        // 
+        // RampInDeck
+        // 
+        RampInDeck.BackColor = System.Drawing.Color.FromArgb(((int)((byte)36)), ((int)((byte)40)), ((int)((byte)64)));
+        RampInDeck.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        RampInDeck.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)212)), ((int)((byte)220)), ((int)((byte)220)));
+        RampInDeck.Location = new System.Drawing.Point(124, 35);
+        RampInDeck.Name = "RampInDeck";
+        RampInDeck.Size = new System.Drawing.Size(100, 20);
+        RampInDeck.TabIndex = 34;
+        RampInDeck.Text = "10";
+        // 
+        // label24
+        // 
+        label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label24.ForeColor = System.Drawing.Color.White;
+        label24.Location = new System.Drawing.Point(6, 35);
+        label24.Name = "label24";
+        label24.Size = new System.Drawing.Size(117, 23);
+        label24.TabIndex = 33;
+        label24.Text = "Ramp in Deck: ";
         // 
         // StatsCalcScreen
         // 
@@ -453,14 +709,36 @@ partial class StatsCalcScreen
         ResumeLayout(false);
     }
 
-    private System.Windows.Forms.TextBox textBox2;
-    private System.Windows.Forms.TextBox textBox3;
-    private System.Windows.Forms.TextBox textBox4;
-    private System.Windows.Forms.TextBox textBox5;
+    private System.Windows.Forms.TextBox RampInDeck;
+    private System.Windows.Forms.Label label24;
+
+    private System.Windows.Forms.TextBox G_Land_Pips;
+    private System.Windows.Forms.TextBox R_Land_Pips;
+    private System.Windows.Forms.TextBox B_Land_Pips;
+    private System.Windows.Forms.TextBox U_Land_Pips;
+    private System.Windows.Forms.TextBox W_Land_Pips;
+    private System.Windows.Forms.Label label18;
+    private System.Windows.Forms.Label label19;
+    private System.Windows.Forms.Label label20;
+    private System.Windows.Forms.Label label21;
+    private System.Windows.Forms.Label label22;
+    private System.Windows.Forms.Label label23;
+
+    private System.Windows.Forms.Label label14;
+    private System.Windows.Forms.Label label15;
+    private System.Windows.Forms.Label label16;
+    private System.Windows.Forms.Label label17;
+
+    private System.Windows.Forms.Label label13;
+
+    private System.Windows.Forms.TextBox U_Spell_Pips;
+    private System.Windows.Forms.TextBox B_Spell_Pips;
+    private System.Windows.Forms.TextBox R_Spell_Pips;
+    private System.Windows.Forms.TextBox G_Spell_Pips;
     private System.Windows.Forms.Label label12;
 
     private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox W_Spell_Pips;
 
     private System.Windows.Forms.Label label11;
 
